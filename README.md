@@ -30,6 +30,20 @@ The bot uses a d20 roll to determine the nature of the prophecy. If a Gemini API
     python bot.py
     ```
 
+## Important Configuration
+
+### The Fortune Teller's Name
+
+It is highly recommended that you change the `COMMAND_NAME` in `config.py`. This variable is used as the name of the fortune teller in the bot's output. The default value is `"fortune"`, which can lead to awkward phrasing like "fortune says:".
+
+For a much better experience, change this to a name, for example:
+
+```python
+COMMAND_NAME = "Zoltar"
+```
+
+This will result in output like "Zoltar says:".
+
 ## Features
 
 - **Rate Limiting:** The command is rate-limited to 3 uses per 60 seconds per user to prevent spam.
