@@ -29,8 +29,20 @@ start_bot() {
         echo "$BOT_NAME is already running in tmux session."
     else
         echo "Starting $BOT_NAME in tmux session..."
+        > "$LOG_FILE"
         tmux new-session -d -s "$BOT_NAME" "source $VENV_DIR/bin/activate && python $BOT_SCRIPT >> $LOG_FILE 2>&1"
         echo "$BOT_NAME started in tmux session '$BOT_NAME'."
+
+        echo "Waiting for invite link..."
+        for i in {1..15}; do # Check for 30 seconds
+            invite_link=$(grep "Invite link:" "$LOG_FILE" | tail -n 1 | sed 's/.*Invite link: //')
+            if [ -n "$invite_link" ]; then
+                echo "Invite link: $invite_link"
+                return
+            fi
+            sleep 2
+        done
+        echo "Could not find invite link in the log file after 30 seconds."
     fi
 }
 

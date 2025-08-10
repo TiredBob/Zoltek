@@ -55,6 +55,7 @@ The `startbot.sh` script allows you to run the bot in a `tmux` session, so it wi
     ```bash
     ./startbot.sh start
     ```
+    The script will then print the bot's invite link to the console.
 -   **Stop the bot:**
     ```bash
     ./startbot.sh stop
