@@ -30,9 +30,9 @@ Before you can run the bot, you need to create a "bot account" on Discord and ge
 
 Now that you have your bot's token, it's time to get the bot's files ready on your computer.
 
-1.  **Open the `config.py` file:** This file is in the same folder as this `README.md` file. You can open it with any text editor.
-2.  **Add Your Token:** Inside this file, you'll see a line that says `TOKEN = "YOUR_BOT_TOKEN_HERE"`. Replace `"YOUR_BOT_TOKEN_HERE"` with the token you copied from the Discord Developer Portal. Make sure to keep the quotation marks!
-3.  **(Optional) Get a Gemini API Key:** If you want the bot to give you more detailed fortunes, you can get a Gemini API key. You can find instructions on how to get one by searching for "Google AI Studio" on the web. Once you have your key, replace `"YOUR_GEMINI_API_KEY_HERE"` in the `config.py` file with your key.
+1.  **Create a `.env` file:** In the same folder as this `README.md` file, you'll find a file named `.env.example`. Make a copy of this file and rename it to `.env`.
+2.  **Add Your Token:** Open the `.env` file with a text editor. You'll see a line that says `DISCORD_BOT_TOKEN="YOUR_BOT_TOKEN_HERE"`. Replace `"YOUR_BOT_TOKEN_HERE"` with the token you copied from the Discord Developer Portal. Make sure to keep the quotation marks!
+3.  **(Optional) Get a Gemini API Key:** If you want the bot to give you more detailed fortunes, you can get a Gemini API key. You can find instructions on how to get one by searching for "Google AI Studio" on the web. Once you have your key, replace `"YOUR_GEMINI_API_KEY_HERE"` in the `.env` file with your key.
 4.  **(Optional) Give Your Fortune Teller a Name:** You can change the name of the fortune teller by changing the `COMMAND_NAME` in the `config.py` file. For example, you could change it to `COMMAND_NAME = "Zoltar"`. This will make the bot's messages look like "Zoltar says:" instead of "fortune says:".
 5.  **(Optional) Set a Command Shortcut:** You can also set a shortcut for the bot's command by changing the `COMMAND_ALIAS` in the `config.py` file. For example, you could set it to `COMMAND_ALIAS = "ft"`.
 
@@ -44,7 +44,7 @@ Now for the exciting part! It's time to start the bot.
 2.  **Navigate to the bot's folder:** Use the `cd` command to go to the folder where you saved the bot's files.
 3.  **Install the bot's dependencies:** Type the following command and press Enter:
     ```bash
-    pip install discord.py google-generativeai
+    pip install discord.py google-generativeai python-dotenv
     ```
 4.  **Start the bot:** Type the following command and press Enter:
     ```bash
